@@ -17,7 +17,7 @@ Os servidores, por sua vez, são dispositivos robustos que recebem requisições
 
 **Exemplo prático**: Em uma empresa com uma rede interna, alguns computadores funcionam como servidores, oferecendo serviços como e-mail, armazenamento de dados e impressão, enquanto outros consomem esses serviços.
 
-![Ilustração de uma rede interna corporativa](./assets/ilustracao-rede-interna-empresa.jpg)
+![Ilustração de uma rede interna corporativa](../assets/ilustracao-rede-interna-empresa.jpg)
 
 ---
 
@@ -29,7 +29,7 @@ Essa arquitetura possibilitou o desenvolvimento de sistemas baseados em **arquit
 
 Nesse modelo, há duas camadas: cliente e servidor. A camada cliente gerencia a interface com o usuário e a lógica de negócio, enquanto a camada servidor lida com os dados, geralmente utilizando sistemas gerenciadores de bancos de dados (SGBD). Aplicações desktop instaladas em computadores clientes, conectadas a um servidor na mesma rede, são exemplos desse modelo.
 
-![Modelo de duas camadas](./assets/duas-camadas.jpg)
+![Modelo de duas camadas](../assets/duas-camadas.jpg)
 
 ---
 
@@ -41,7 +41,7 @@ Para superar limitações do modelo de duas camadas, como a necessidade de atual
 - **Camada de Aplicação**: Servidor que gerencia a lógica de negócio e o acesso aos dados.
 - **Camada de Dados**: Servidor dedicado ao armazenamento de dados.
 
-![Modelo de três camadas](./assets/tres-camadas.jpg)
+![Modelo de três camadas](../assets/tres-camadas.jpg)
 
 ---
 
@@ -49,4 +49,4 @@ Para superar limitações do modelo de duas camadas, como a necessidade de atual
 
 O avanço significativo foi centralizar a lógica de negócio em servidores web, eliminando a necessidade de aplicações instaladas localmente. Nesse modelo, clientes acessam aplicações hospedadas via navegadores, e a infraestrutura inclui três tipos de servidores: web, aplicação e dados.
 
-![Modelo de três camadas com servidor web](./assets/tres-camadas-2.jpg)
+![Modelo de três camadas com servidor web](../assets/tres-camadas-2.jpg)
