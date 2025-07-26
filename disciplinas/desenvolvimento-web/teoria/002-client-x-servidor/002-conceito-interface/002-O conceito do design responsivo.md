@@ -124,7 +124,3 @@ Esse conceito se opõe à "**graceful degradation**", em que páginas são proje
 O design responsivo não é apenas uma tendência — é uma exigência no desenvolvimento web moderno. Ele garante acessibilidade, usabilidade, performance e otimização para SEO.
 
 Dominar seus fundamentos é essencial para qualquer profissional de front-end ou desenvolvedor full stack que deseja entregar soluções completas e escaláveis.
-
-Se desejar, posso gerar esse conteúdo em PDF, incluir imagens ilustrativas, diagramas ou criar uma apresentação para treinamento corporativo.
-
-É só dar o sinal verde.
