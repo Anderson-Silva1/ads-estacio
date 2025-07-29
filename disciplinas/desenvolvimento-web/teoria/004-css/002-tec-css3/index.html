@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @font-face {
+        font-family: "Nobile-Bold";
+        src: url("fonts/Nobile-Bold.woff2") format("woff2");
+        font-weight: 700; /* Corrigido para valor numérico */
+        font-style: normal;
+        font-display: swap; /* Adicionado para melhorar o carregamento */
+      }
+
+      #primeiro-container {
+        font-family: "Bitcount Prop Single", system-ui, sans-serif; /* Adicionado sans-serif como fallback adicional */
+        font-optical-sizing: auto; /* Mantido, se a fonte suportar */
+        font-weight: 400; /* Corrigido de "weight" para um valor válido */
+        font-style: normal;
+        /* Removido font-variation-settings, pois não há garantia de suporte para esses eixos */
+      }
+
+      #segundo-container {
+        font-family: "Nobile-Bold", sans-serif; /* Adicionado fallback */
+        font-weight: 900; /* Consistente com o @font-face */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Usando Web Fontes</h1>
+    <p id="primeiro-container">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod nibh
+      sit amet justo cursus, eget posuere arcu pharetra. Donec vestibulum,
+      lectus non consectetur condimentum, ex purus luctus lectus, at lacinia
+      augue sem euismod diam.
+    </p>
+
+    <p id="segundo-container">
+      Aliquam aliquam accumsan varius. Fusce facilisis sollicitudin tortor.
+      Curabitur aliquet bibendum ligula, vitae porta nunc ornare sed. Aliquam
+      dapibus scelerisque turpis, eget hendrerit turpis elementum in. Aliquam
+      accumsan sit amet nisi euismod imperdiet.
+    </p>
+  </body>
+</html>
