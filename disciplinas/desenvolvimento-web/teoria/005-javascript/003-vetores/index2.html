@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>
+        Solicite ao usuário que insira dois números inteiros positivos. Utilize
+        um vetor para armazenar esses dois números.
+      </li>
+      <li>
+        Verifique se os números inseridos são inteiros positivos. Caso
+        contrário, solicite ao usuário para inseri-los novamente.
+      </li>
+      <li>Divida os dois números inteiros positivos.</li>
+    </ul>
+  </body>
+
+  <script>
+    let numero1 = Number(
+      prompt("Digite o primeiro número inteiro positivo: ").trim()
+    );
+    let numero2 = Number(
+      prompt("Digite o segundo número inteiro positivo: ").trim()
+    );
+
+    // Verifica se os números são inteiros positivos
+    while (
+      numero1 <= 0 ||
+      numero2 <= 0 ||
+      !Number.isInteger(numero1) ||
+      !Number.isInteger(numero2) ||
+      isNaN(numero1) ||
+      isNaN(numero2)
+    ) {
+      alert("Por favor, insira números inteiros positivos.");
+      numero1 = Number(
+        prompt("Digite o primeiro número inteiro positivo: ").trim()
+      );
+      numero2 = Number(
+        prompt("Digite o segundo número inteiro positivo: ").trim()
+      );
+    }
+
+    let listaNumeros = [numero1, numero2];
+
+    function dividirNumeros(listaNumeros) {
+      const [num1, num2] = listaNumeros;
+
+      if (num2 === 0) {
+        return "Divisão por zero não é permitida.";
+      }
+      return num1 / num2;
+    }
+
+    const resultado = dividirNumeros(listaNumeros);
+
+    let resultadoTexto = `Numero 1: ${listaNumeros[0]}\nNumero 2: ${listaNumeros[1]}\n\nResultado da divisão: ${resultado}`;
+
+    console.log(resultadoTexto);
+  </script>
+</html>

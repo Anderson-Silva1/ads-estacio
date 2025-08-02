@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div
+      class="max-w-screen-lg flex justfy-center items-center flex-col mx-auto pt-32 gap-8"
+    >
+      <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-2">
+          <label for="nome" class="font-bold">Nome</label>
+          <input
+            type="text"
+            name="nome"
+            id="nome"
+            class="border-2 rounded-lg"
+            disabled
+          />
+        </div>
+        <button onclick="buscarDados()" class="p-3">Enviar</button>
+      </div>
+      <div id="conteudo">content</div>
+    </div>
+  </body>
+  <script>
+    const buscarDados = () => {
+      const url = "https://jsonplaceholder.typicode.com/posts";
+      const nome = document.getElementById("nome").value;
+
+      fetch(`${url}${nome}`, {
+        method: "get",
+      })
+        .then((res) => {
+          if (!res.ok) throw new Error("Erro na requisição");
+          console.log(res);
+          return res.json();
+        })
+        .then((data) => {
+          console.log(data);
+          const conteudo = document.getElementById("conteudo");
+          const titulos = data.map((item) => item.title).join(" <br /><br /> ");
+          conteudo.innerHTML = JSON.stringify(titulos);
+        })
+        .catch((err) => {
+          console.error("Erro:", err);
+          const conteudo = document.getElementById("conteudo");
+          conteudo.innerHTML = "Erro ao buscar dados";
+        });
+    };
+  </script>
+</html>

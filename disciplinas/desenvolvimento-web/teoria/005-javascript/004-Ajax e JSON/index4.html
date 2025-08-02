@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main
+      class="max-w-screen-lg mx-auto flex flex-col justify-center gap-12 items-center min-h-screen"
+    >
+      <div class="flex flex-col justify-center items-center">
+        <img src="" alt="Imagem" id="image" />
+        <h1 id="titulo"></h1>
+        <p id="descricao"></p>
+        <span id="preco"></span>
+      </div>
+
+      <div>
+        <input
+          type="text"
+          placeholder="Digite o número do produto"
+          class="border p-2 rounded"
+          id="index"
+          value="1"
+          autofocus
+        />
+        <button
+          onclick="buscarProduto()"
+          class="bg-blue-500 text-white p-2 rounded ml-2"
+        >
+          Enviar
+        </button>
+        <button
+          onclick="getNextIndex()"
+          class="bg-blue-500 text-white p-2 rounded ml-2"
+        >
+          Avançar
+        </button>
+      </div>
+    </main>
+  </body>
+  <script>
+    const url = "https://dummyjson.com/products/";
+    let currentIndex = 0;
+
+    function getNextIndex() {
+      currentIndex = currentIndex < 200 ? currentIndex + 1 : 1;
+      document.getElementById("index").value = currentIndex;
+      buscarProduto();
+    }
+
+    const buscarProduto = () => {
+      let index = document.getElementById("index").value;
+      currentIndex = Number(index);
+
+      console.log("Index: " + index);
+
+      fetch(`${url}${index}`, { method: "get" })
+        .then((response) => {
+          if (!response.ok) throw new Error("Network response was not ok");
+
+          return response.json();
+        })
+        .then((data) => {
+          console.log("Product Id: " + data.id);
+          console.log("Product Title: " + data.title);
+
+          document.getElementById("titulo").innerText = data.title;
+
+          console.log("Product Description: " + data.description);
+
+          document.getElementById("descricao").innerHTML = data.description;
+
+          console.log("Product Price: " + data.price);
+
+          document.getElementById("preco").innerHTML = "R$" + data.price;
+          document.getElementById("preco").style.color = "green";
+
+          console.log(
+            "Product Discount Percentage: " + data.discountPercentage
+          );
+          console.log("Product Rating: " + data.rating);
+          console.log("Product Stock: " + data.stock);
+          console.log("Product Brand: " + data.brand);
+          console.log("Product Category: " + data.category);
+          console.log("Product Thumbnail: " + data.thumbnail);
+          console.log("Product Images: " + data.images);
+
+          document.getElementById("image").src = data.thumbnail;
+        });
+    };
+  </script>
+</html>

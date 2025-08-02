@@ -1,0 +1,79 @@
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>Requisição XMLHttpRequest</title>
+  </head>
+  <body>
+    <h1>Imagens Aleatórios de Cachorros</h1>
+    <p>
+      A partir do click no botão abaixo uma nova imagem aleatória de cachorros
+      será carregada utilizando requisições assíncronas com XMLHttpRequest
+    </p>
+
+    <img id="img_dog" src="" alt="Aguardando a imagem ser carregada" />
+    <br />
+    <button onclick="carregarImagens()">Carregar Imagens</button>
+  </body>
+  <script type="text/javascript">
+    function carregarImagens() {
+      // Instanciando a classe XMLHttpRequest
+      var xmlHttpRequest = new XMLHttpRequest();
+      var url = "https://dog.ceo/api/breeds/image/random";
+
+      // Metodo de inicialização da requisição
+      // O primeiro parâmetro é o método HTTP (GET, POST, etc.)
+      // O segundo parâmetro é a URL para onde a requisição será enviada
+      // O terceiro parâmetro indica se a requisição deve ser assíncrona (true) ou síncrona (false)
+      xmlHttpRequest.open("GET", url, true);
+
+      // onreadystatechange é um evento que é disparado sempre que o estado da requisição muda
+      // readyState é uma propriedade que indica o estado atual da requisição
+      // Os estados possíveis são:
+      //    0: Requisição não iniciada
+      //    1: Conexão estabelecida
+      //    2: Requisição recebida
+      //    3: Processando a requisição
+      //    4: Requisição concluída e resposta está pronta
+      // status é uma propriedade que indica o status da resposta HTTP
+      //    200: OK
+      //    404: Not Found
+      //    500: Internal Server Error
+      //    E outros códigos de status HTTP
+      xmlHttpRequest.onreadystatechange = function () {
+        if (xmlHttpRequest.readyState == 0) {
+          console.log("Requisição não iniciada");
+        }
+        if (xmlHttpRequest.readyState == 1) {
+          console.log("Conexão estabelecida");
+        }
+        if (xmlHttpRequest.readyState == 2) {
+          console.log("Requisição recebida");
+        }
+        if (xmlHttpRequest.readyState == 3) {
+          console.log("Carregando o conteúdo");
+        }
+
+        // Quando a requisição estiver concluída (readyState == 4)
+        // e a resposta estiver pronta (status == 200)
+        // podemos processar a resposta
+        // A resposta é um objeto JSON que contém a imagem aleatória de cachorro
+        if (xmlHttpRequest.readyState == 4) {
+          // A propriedade responseText contém a resposta como uma string
+          // Podemos usar JSON.parse() para converter a string em um objeto JavaScript
+          var { message, status } = JSON.parse(xmlHttpRequest.responseText);
+
+          console.log("Requisição Finalizada");
+          console.log("Resultado da Requisição:");
+          console.log({ message, status });
+          console.log("Resultado da Requisição:");
+          console.log(message);
+
+          var imgDog = document.getElementById("img_dog");
+          imgDog.src = message;
+        }
+      };
+
+      xmlHttpRequest.send(null);
+    }
+  </script>
+</html>
