@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      .container {
+        min-height: 100dvh;
+        background-color: #f1f1f1;
+        width: 100%;
+      }
+
+      .content {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .numeros {
+        display: flex;
+        gap: 64px;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <div class="flex">
+          <div class="numeros">
+            <h1 id="numero1">0</h1>
+            <h1 id="operacao">+</h1>
+            <h1 id="numero2">0</h1>
+            <h1>=</h1>
+            <h1 id="resultado">0</h1>
+          </div>
+          <button id="calcular">Calcular</button>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    let numero1Element = document.getElementById("numero1");
+    let numero2Element = document.getElementById("numero2");
+    let operacaoElement = document.getElementById("operacao");
+    let resultadoElement = document.getElementById("resultado");
+    let calcularElement = document.getElementById("calcular");
+
+    let resultado = 0;
+
+    calcularElement.addEventListener("click", () => {
+      let numero1 = Number(prompt("Digite o primeiro número:"));
+      let operacao = prompt("Digite a operação desejada (+, -, *, /):");
+
+      const operacaoValida = ["+", "-", "*", "/"];
+
+      while (operacaoValida.indexOf(operacao) === -1) {
+        operacao = prompt(
+          "Operação inválida. Digite a operação desejada (+, -, *, /):"
+        );
+      }
+
+      let numero2 = Number(prompt("Digite o segundo número:"));
+
+      switch (operacao) {
+        case "+":
+          resultado = numero1 + numero2;
+          break;
+        case "-":
+          resultado = numero1 - numero2;
+          break;
+        case "*":
+          resultado = numero1 * numero2;
+          break;
+        case "/":
+          if (numero2 === 0) {
+            alert("Divisão por zero não é permitida.");
+            return;
+          }
+          resultado = numero1 / numero2;
+          break;
+      }
+
+      numero1Element.innerHTML = numero1;
+      numero2Element.innerHTML = numero2;
+      operacaoElement.innerHTML = operacao;
+      resultadoElement.innerHTML = resultado;
+    });
+  </script>
+</html>
