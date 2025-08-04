@@ -149,6 +149,10 @@ echo $_POST['senha']; // Imprime o valor do campo "senha"
 
 Um array associativo "curinga" que pode conter dados de **GET**, **POST** e **$\_COOKIE**, dependendo da configuração do servidor. Embora versátil, seu uso é menos recomendado, pois pode incluir dados de fontes inesperadas, aumentando o risco de erros ou vulnerabilidades.
 
+> ## **Cookies**
+>
+> É um fragmento reduzido de dados que fica armazenado no navegador do usuário, proveniente de um servidor Web. São normalmente usados para fins de gerenciamento de sessões, armazenamento de preferências do usuário ou rastreamento.
+
 **Exemplo**:
 
 ```php
