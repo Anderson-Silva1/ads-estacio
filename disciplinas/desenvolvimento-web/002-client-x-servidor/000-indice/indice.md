@@ -125,3 +125,13 @@ Esta seção explora tecnologias server-side, focando em PHP e sua integração 
 
 - **Wroblewski, L.** (s.d.). _Mobile First_.
   Aborda a estratégia de priorizar o design para dispositivos móveis.
+
+# **OBJETIVO**
+
+- Reconhecer o ambiente web.
+
+- Descrever o conceito de interface.
+
+- Reconhecer as tecnologias do lado cliente.
+
+- Reconhecer as tecnologias do lado servidor.

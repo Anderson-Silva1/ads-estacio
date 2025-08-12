@@ -59,3 +59,10 @@ Para aprofundar seus conhecimentos, confira estas recomendações:
 O HTML é a fundação da web, e dominar seus conceitos permite criar páginas e aplicações web acessíveis, funcionais e bem estruturadas. Com o conhecimento de tags, atributos, validação de formulários, listas, tabelas e mídias, você está pronto para construir experiências digitais que atendam às necessidades dos usuários e sigam as melhores práticas da web moderna. Continue explorando e praticando para aprimorar suas habilidades!
 
 <xaiArtifact
+
+# Objetivos
+
+- Reconhecer a estrutura de uma página web.
+- Empregar as tags na HTML.
+- Empregar as tags complementares às tags básicas em uma página web.
+- Aplicar um formulário em uma página web.

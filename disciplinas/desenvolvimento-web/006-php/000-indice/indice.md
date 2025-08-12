@@ -221,3 +221,11 @@ O estudo de PHP neste módulo abrangeu desde os fundamentos (operadores, formul�
 - Pratique os exemplos fornecidos, especialmente o código integrado.
 - Experimente criar aplicações mais complexas, como um sistema de login ou um gerenciador de tarefas.
 - Explore a documentação oficial e ferramentas online para consolidar o aprendizado.
+
+# Objetivos
+
+- Examinar a linguagem de programação PHP e seus conceitos básicos.
+
+- Aplicar as estruturas de decisão e de repetição disponíveis em PHP.
+
+- Identificar conceitos relativos a vetores e funções em PHP.
